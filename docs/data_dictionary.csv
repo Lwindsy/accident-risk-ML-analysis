@@ -1,0 +1,10 @@
+field,type,unit,example,description
+timestamp,float,seconds_since_epoch,1.694e9,monotonic vehicle timestamp in UTC seconds
+lat,float,degrees,57.70887,WGS-84 latitude
+lon,float,degrees,11.97456,WGS-84 longitude
+speed,float,m/s,13.9,instantaneous speed
+accel,float,m/s^2,0.8,longitudinal acceleration (+ forward)
+heading,float,degrees,270,vehicle heading angle in degrees [0,360)
+yaw_rate,float,deg/s,5.2,optional rotational rate around vertical axis
+throttle,int,flag,1,binary flag if available (1=on,0=off)
+brake,int,flag,0,binary flag if available (1=on,0=off)

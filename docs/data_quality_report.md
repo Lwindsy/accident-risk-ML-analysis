@@ -1,0 +1,13 @@
+# Data Quality Report — Phase 1
+- File: data/raw/driving_sample.csv
+- Shape: 398 rows × 9 cols
+- Missing cells (total): 6
+- Missing rate (overall): 0.1675%
+- 99th percentile snapshot (numeric columns):
+  - mpg: 43.417999999999985
+  - cylinders: 8.0
+  - displacement: 440.4199999999996
+  - horsepower: 220.44999999999987
+  - weight: 4951.03
+  - acceleration: 22.238999999999965
+  - model_year: 82.0

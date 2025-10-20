@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+.env
+.env.*
+.coverage
+.pytest_cache/
+.mypy_cache/
+.cache/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project data
+data/raw/
+data/clean/
+data/processed/
+data/standardized/
+reports/
+logs/
+tmp/
+
+# Contracts & artifacts
+docs/data_contract.lock
+*.lock
+*.log
+*.png
+*.pdf
+*.svg
+*.parquet
+
+# Editors/IDEs
+.vscode/
+.idea/
+
+# Misc
+*.tmp
+*.bak

@@ -1,0 +1,55 @@
+schema_version: '1.0'
+global_meta:
+  coordinate_reference_system: WGS84
+  time_basis: UTC
+  sampling_rate_hz: TBD
+  window_definition:
+    history_seconds: 10
+    prediction_horizon_seconds: 10
+  notes: Units and field names must remain stable after Gate A unless reviewed.
+fields:
+- name: timestamp
+  type: float
+  unit: seconds_since_epoch
+  example: 1.694e9
+  description: monotonic vehicle timestamp in UTC seconds
+- name: lat
+  type: float
+  unit: degrees
+  example: '57.70887'
+  description: WGS-84 latitude
+- name: lon
+  type: float
+  unit: degrees
+  example: '11.97456'
+  description: WGS-84 longitude
+- name: speed
+  type: float
+  unit: m/s
+  example: '13.9'
+  description: instantaneous speed
+- name: accel
+  type: float
+  unit: m/s^2
+  example: '0.8'
+  description: longitudinal acceleration (+ forward)
+- name: heading
+  type: float
+  unit: degrees
+  example: '270'
+  description: vehicle heading angle in degrees [0
+- name: yaw_rate
+  type: float
+  unit: deg/s
+  example: '5.2'
+  description: optional rotational rate around vertical axis
+- name: throttle
+  type: int
+  unit: flag
+  example: '1'
+  description: binary flag if available (1=on
+- name: brake
+  type: int
+  unit: flag
+  example: '0'
+  description: binary flag if available (1=on

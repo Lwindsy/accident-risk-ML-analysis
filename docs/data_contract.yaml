@@ -1,0 +1,94 @@
+conformance:
+  dataset_quality_gates:
+    no_future_leakage: true
+    valid_rows_ratio_min: 0.95
+  file_requirements:
+    must_have_columns:
+    - timestamp
+    - lat
+    - lon
+    - speed
+    - accel
+    - heading
+  privacy:
+    geo_precision: '>= 4 decimals after de-identification as defined in privacy policy'
+    pii_allowed_in_standardized: false
+contract_version: '1.0'
+fields:
+- constraints:
+    finite: true
+    monotonic_non_decreasing: true
+  description: Monotonic vehicle timestamp in UTC seconds.
+  name: timestamp
+  type: float
+  unit: seconds_since_epoch
+- constraints:
+    finite: true
+    range:
+    - -90.0
+    - 90.0
+  description: WGS-84 latitude.
+  name: lat
+  type: float
+  unit: degrees
+- constraints:
+    finite: true
+    range:
+    - -180.0
+    - 180.0
+  description: WGS-84 longitude.
+  name: lon
+  type: float
+  unit: degrees
+- constraints:
+    finite: true
+    min: 0.0
+  description: Instantaneous vehicle speed.
+  name: speed
+  type: float
+  unit: m/s
+- constraints:
+    finite: true
+  description: Longitudinal acceleration (forward positive).
+  name: accel
+  type: float
+  unit: m/s^2
+- constraints:
+    finite: true
+    range:
+    - 0.0
+    - 360.0
+    wrap_behavior: mod_360
+  description: Vehicle heading angle in [0, 360).
+  name: heading
+  type: float
+  unit: degrees
+frozen_at_utc: '2025-10-20T01:16:36+00:00'
+global_meta:
+  coordinate_reference_system: EPSG:4326
+  sampling_rate_hz: 10
+  time_basis: UTC
+  window_definition:
+    history_seconds: 10
+    prediction_horizon_seconds: 10
+standardization_policy:
+  coordinates:
+    crs_mandatory: EPSG:4326
+    lat_range:
+    - -90.0
+    - 90.0
+    lon_range:
+    - -180.0
+    - 180.0
+  resample:
+    fill:
+      max_gap_seconds: 2
+    interpolation:
+      categorical: ffill
+      numeric: linear
+    method: time_index_uniform
+    target_rate_hz: 10
+  units:
+    accel: m/s^2
+    heading: degrees
+    speed: m/s
