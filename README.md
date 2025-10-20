@@ -1,9 +1,7 @@
 
 # Accident Risk Prediction — Project Overview (Phase 0 → 3)
 
-**Status:** ✅ Phase 3 completed (Environment ready, Gate A frozen)  
-**Owner:** Zhenlin + GPT‑5 Assistant  
-**Date:** 2025‑10‑20  
+**Status:** Phase 3 completed (Environment ready, Gate A frozen)    
 
 ---
 
